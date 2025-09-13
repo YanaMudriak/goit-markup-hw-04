@@ -21,7 +21,7 @@ a {
 }
 
 /* ---------------------Header-------------*/
-.header {
+/* .header {
     background-color: #FFFFFF;
     border-bottom: 1px solid #e7e9fc;
     box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
@@ -114,12 +114,109 @@ position: relative;
 .header-contacts-link:hover,
 .header-contacts-link:focus {
     color: #404bbf;
+} */
+
+
+/* ---------------------Header-------------*/
+.header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #e7e9fc;
+    box-shadow:
+        0 1px 6px 0 rgba(46, 47, 66, 0.08),
+        0 1px 1px 0 rgba(46, 47, 66, 0.16),
+        0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
-/* -----------------------Hero----------------- */
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #4d5ae5;
+    margin-right: 76px;
+}
+
+.header-logo-accent {
+    color: #2E2F42;
+}
+
+.header-menu-list {
+    display: flex;
+    gap: 40px;
+}
+
+.header-menu-link {
+    display: block;
+    padding: 24px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-menu-link.current {
+    position: relative;
+}
+
+.header-menu-link:hover,
+.header-menu-link:focus,
+.header-menu-link.current {
+    color: #404bbf;
+}
+
+.header-menu-link.current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
+}
+
+.header-contacts {
+    font-style: normal;
+}
+
+.header-contacts-list {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.header-contacts-link {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-contacts-link:hover,
+.header-contacts-link:focus {
+    color: #404bbf;
+}
+/* -----------------------Hero-----------------  */
 
 .hero {
 background-color: #2E2F42;
-background-image: linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)), 
+background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
 url("../images/people-office\ 1-2.jpg");
 max-width: 1440px;
 margin: 0 auto;
@@ -159,6 +256,8 @@ margin: 0 auto;
 height: 56px;
 border: none;
 border-radius: 4px;
+
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero .hero-button:hover,
@@ -166,8 +265,9 @@ border-radius: 4px;
     background-color: #404BBF;
 }
 
+
 /*------------------- Features -----------------*/
-.features {
+/* .features {
     background-color: #FFFFFF;
     padding: 120px 0;
 }
@@ -220,6 +320,81 @@ border-radius: 4px;
     white-space: nowrap;
     clip-path: inset(100%);
     clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+} */
+
+/* ========== Features (секция 3) ========== */
+.features {
+    background-color: #ffffff;
+    padding: 120px 0;
+}
+
+.features-list {
+    display: flex;
+    gap: 24px;
+    /* расстояние между карточками как в макете */
+}
+
+.features-item {
+    width: calc((100% - 72px) / 4);
+    /* 4 колонки с тремя промежутками по 24px */
+}
+
+/* Контейнер-плашка под иконку (как в фигме) */
+.features-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* на всю ширину карточки (≈264px внутри контейнера 1158px) */
+    height: 112px;
+    margin-bottom: 8px;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    background-color: #f4f4fd;
+    box-sizing: border-box;
+}
+
+/* Сама иконка (64×64 из макета) */
+.features-icon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    /* если в спрайте очищен fill — позволяем перекрашивать через currentColor при необходимости */
+    fill: currentColor;
+    color: #2e2f42;
+    /* базовый цвет иконок из макета */
+}
+
+/* Тексты карточки */
+.features-subtitle {
+    margin: 0 0 8px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+}
+
+.features-description {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
+/* Доступный visually-hidden (для h2) — стандартный шаблон */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
     overflow: hidden;
 }
 /* ---------------------------Team ------------------*/
@@ -307,7 +482,6 @@ margin-top: 8px;
     border-radius: 50%;
     background-color: #4d5ae5;
     fill: #F4F4FD;
-.
 }
 
 .team-social-list{
@@ -321,7 +495,7 @@ margin-top: 8px;
     margin: 12px;
 }
 /* --------------------Portfolio--------------------- */
-.portfolio {
+/* .portfolio {
     background-color: #FFFFFF;
     padding: 120px 0;
 }
@@ -401,9 +575,112 @@ margin-top: 8px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+} */
+
+/* ---------- Portfolio ---------- */
+.portfolio {
+    background-color: #ffffff;
+    padding: 120px 0;
 }
 
-/* -------------------------Footer--------------- */
+.portfolio-title {
+    margin: 0 0 72px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    text-transform: capitalize;
+}
+
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    row-gap: 48px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.portfolio-item {
+    flex: 0 0 calc((100% - 48px) / 3);
+}
+
+/* ссылка-обёртка всей карточки */
+.portfolio-link {
+    display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
+    box-shadow:
+        0 1px 6px rgba(46, 47, 66, 0.08),
+        0 1px 1px rgba(46, 47, 66, 0.16),
+        0 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+/* контейнер для картинки + оверлей */
+.portfolio-item-cover {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-image {
+    display: block;
+    width: 100%;
+    height: 300px;
+    /* как в макете */
+    object-fit: cover;
+}
+
+/* оверлей */
+.portfolio-item-text {
+    position: absolute;
+    inset: 0;
+    /* top/right/bottom/left: 0 */
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    color: #f4f4fd;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* показываем оверлей при hover/focus на ссылке */
+.portfolio-link:hover .portfolio-item-text,
+.portfolio-link:focus .portfolio-item-text {
+    transform: translateY(0);
+}
+
+/* подпись карточки */
+.portfolio-card-body {
+    padding: 32px 16px;
+    border: 1px solid #e7e9fc;
+    border-top: none;
+}
+
+.portfolio-name {
+    margin: 0 0 8px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+}
+
+.portfolio-category {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+/* -------------------------Footer 1--------------- */
 /* 
 .footer {
     background-color: #2E2F42;
@@ -449,21 +726,25 @@ line-height: ;: 1.5;
 
 
 /* ===== Footer ===== */
+/* ===== Footer ===== */
 .footer {
-    background-color: #2E2F42;
+    background-color: #2e2f42;
     padding: 100px 0;
 }
 
-/* две колонки: слева бренд, справа соцсети */
+/* обертка футера: две колонки, выравнивание по базовой линии текста */
 .footer-content {
     display: flex;
-    align-items: flex-start;
-    /* выравнивание по верхнему краю */
-    gap: 120px;
-    /* зазор между колонками как в макете */
+    align-items: baseline;
+    /* validator */
 }
 
-/* левая колонка */
+/* левая колонка (логотип + абзац) */
+.footer-info {
+    margin-right: 120px;
+    /* расстояние между колонками — validator */
+}
+
 .footer-logo {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -471,81 +752,100 @@ line-height: ;: 1.5;
     line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: #4D5AE5;
+    color: #4d5ae5;
     display: inline-block;
     margin-bottom: 16px;
 }
 
 .footer-logo-accent {
-    color: #F4F4FD;
+    color: #f4f4fd;
 }
 
 .footer-text {
     max-width: 264px;
-    /* ширина текстового блока по макету */
     margin: 0;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #F4F4FD;
+    color: #f4f4fd;
 }
 
 /* правая колонка (соцсети) */
-.footer-social {
-    /* специально пусто: управляем содержимым ниже */
-}
+.footer-social {}
 
+/* заголовок блока соцсетей */
 .footer-social-text {
     margin: 0 0 16px;
-    /* отступ от заголовка до ряда иконок */
+    font-weight: 500;
+    /* validator */
+    font-size: 16px;
+    /* validator */
     line-height: 1.5;
+    /* validator */
     letter-spacing: 0.02em;
-    color: #FFFFFF;
+    /* validator */
+    color: #ffffff;
+    /* validator */
 }
 
-/* ряд иконок */
+/* список кружков */
 .footer-social-list {
     display: flex;
-    align-items: center;
+    /* validator */
     gap: 16px;
-    /* расстояние между кружками */
-    padding: 0;
-    margin: 0;
+    /* validator */
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-/* круглая кнопка-иконка */
+/* каждый пункт — фиксированный кружок 40×40 */
 .footer-social-item {
-    /* НИКАКИХ calc и margin-top — именно это ломало сетку */
     width: 40px;
+    /* validator */
     height: 40px;
-    border-radius: 50%;
-    background-color: #4D5AE5;
-    display: flex;
-    /* центрируем svg */
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 40px;
-    /* фиксированный кружок */
-    transition: background-color .2s ease;
+    /* validator */
 }
 
-/* сам svg внутри кружка */
+/* ссылка заполняет кружок и центрирует иконку */
+.footer-social-link {
+    width: 100%;
+    /* validator */
+    height: 100%;
+    /* validator */
+    background-color: #4d5ae5;
+    /* validator */
+    border-radius: 50%;
+    /* validator */
+    display: flex;
+    /* validator */
+    align-items: center;
+    /* validator */
+    justify-content: center;
+    /* validator */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* validator */
+}
+
+/* hover/focus цвет по ТЗ */
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: #31d0aa;
+    /* validator */
+}
+
+/* сама svg-иконка */
 .footer-social-icon {
-    width: 16px;
-    height: 16px;
-    fill: #F4F4FD;
+    width: 24px;
+    /* validator */
+    height: 24px;
+    /* validator */
+    fill: #f4f4fd;
+    /* validator: цвет иконки через CSS */
     display: block;
 }
 
-/* hover как в макете */
-.footer-social-item:hover,
-.footer-social-item:focus-within {
-    background-color: #31D0AA;
-    /* цвет наведения для футера */
-}
-
-/* контейнер сайта — оставляем как есть */
+/* контейнер сайта (как у тебя) */
 .container {
     width: 1158px;
     padding-left: 15px;
