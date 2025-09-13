@@ -24,6 +24,7 @@ a {
 .header {
     background-color: #FFFFFF;
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -57,6 +58,9 @@ a {
     gap: 40px;
 }
 
+.header-menu-link.current {
+position: relative;
+}
 .header-menu-link {
     display: block;
     padding: 24px 0;
@@ -65,13 +69,28 @@ a {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #2E2F42;
+
+
+    transition: color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-menu-link:hover,
-.header-menu-link:focus {
+.header-menu-link:focus,
+
+.header-menu-link.current{
     color: #404bbf;
 }
 
+.header-menu-link.current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
+}
 .header-contacts {
     font-style: normal;
 }
@@ -80,6 +99,7 @@ a {
     display: flex;
     gap: 40px;
     align-items: center;
+    
 }
 
 .header-contacts-link {
@@ -87,6 +107,8 @@ a {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+
+    transition: color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contacts-link:hover,
@@ -97,6 +119,13 @@ a {
 
 .hero {
 background-color: #2E2F42;
+background-image: linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)), 
+url("../images/people-office\ 1-2.jpg");
+max-width: 1440px;
+margin: 0 auto;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
 padding: 188px 0;
 
 }
@@ -151,6 +180,19 @@ border-radius: 4px;
 .features-item {
     width: calc((100% - 72px) / 4);
 }
+
+    .features-icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #8E8F99;
+        border-radius: 4px;
+            width: 264px;
+            height: 112px;
+            background-color: #F4F4FD;
+            margin-bottom: 8px;
+    }
+
 
 .features-subtitle {
     font-weight: 500;
@@ -244,6 +286,40 @@ border-radius: 4px;
     letter-spacing: 0.02em;
     color: #434455;
 }
+
+.container-team-social {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 24px;
+}
+
+.team-social-link  {
+    
+}
+
+.team-social-item {
+margin-top: 8px;
+    width: calc((100% - 24px) / 4);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4d5ae5;
+    fill: #F4F4FD;
+.
+}
+
+.team-social-list{
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-social-icon {
+    margin: 12px;
+}
 /* --------------------Portfolio--------------------- */
 .portfolio {
     background-color: #FFFFFF;
@@ -275,6 +351,26 @@ border-radius: 4px;
 .portfolio-item {
     flex: 0 0 calc((100% - 48px) / 3);
     background: #fff;
+    position: relative;
+}
+.portfolio-item:hover .portfolio-item-text {
+    transform: translateY(0);
+}
+.portfolio-item-cover {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #4D5AE5;
+    color: #F4F4FD;
+    padding: 40px 32px; 
+    height: 100%;
+    transform: translateY(100%);
+    transition: 0.3s ease-in-out;
 }
 
 .portfolio-image {
@@ -308,7 +404,7 @@ border-radius: 4px;
 }
 
 /* -------------------------Footer--------------- */
-
+/* 
 .footer {
     background-color: #2E2F42;
     padding: 100px 0;
@@ -332,20 +428,127 @@ border-radius: 4px;
     color: #F4F4FD;
 }
 
-    
+
 .footer-text {
-        font-size: 16px;
-    
-        line-height: 1.5;
-        letter-spacing: 0.02em;
-        color: #F4F4FD;
-        max-width: 264px;
-        margin: 0;
+    font-size: 16px;
+
+line-height: ;: 1.5;
+    letter-spacing: 0.02em;
+    color: #F4F4FD;
+    max-width: 264px;
+    margin: 0;
 }
+
 .container {
     width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
 
+} */
+
+
+/* ===== Footer ===== */
+.footer {
+    background-color: #2E2F42;
+    padding: 100px 0;
+}
+
+/* две колонки: слева бренд, справа соцсети */
+.footer-content {
+    display: flex;
+    align-items: flex-start;
+    /* выравнивание по верхнему краю */
+    gap: 120px;
+    /* зазор между колонками как в макете */
+}
+
+/* левая колонка */
+.footer-logo {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #4D5AE5;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.footer-logo-accent {
+    color: #F4F4FD;
+}
+
+.footer-text {
+    max-width: 264px;
+    /* ширина текстового блока по макету */
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #F4F4FD;
+}
+
+/* правая колонка (соцсети) */
+.footer-social {
+    /* специально пусто: управляем содержимым ниже */
+}
+
+.footer-social-text {
+    margin: 0 0 16px;
+    /* отступ от заголовка до ряда иконок */
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+/* ряд иконок */
+.footer-social-list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    /* расстояние между кружками */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* круглая кнопка-иконка */
+.footer-social-item {
+    /* НИКАКИХ calc и margin-top — именно это ломало сетку */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4D5AE5;
+    display: flex;
+    /* центрируем svg */
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 40px;
+    /* фиксированный кружок */
+    transition: background-color .2s ease;
+}
+
+/* сам svg внутри кружка */
+.footer-social-icon {
+    width: 16px;
+    height: 16px;
+    fill: #F4F4FD;
+    display: block;
+}
+
+/* hover как в макете */
+.footer-social-item:hover,
+.footer-social-item:focus-within {
+    background-color: #31D0AA;
+    /* цвет наведения для футера */
+}
+
+/* контейнер сайта — оставляем как есть */
+.container {
+    width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
 }
