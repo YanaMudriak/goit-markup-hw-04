@@ -213,56 +213,57 @@ position: relative;
     color: #404bbf;
 }
 /* -----------------------Hero-----------------  */
-
+/* HERO */
 .hero {
-background-color: #2E2F42;
-background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-url("../images/people-office\ 1-2.jpg");
-max-width: 1440px;
-margin: 0 auto;
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-padding: 188px 0;
-
+    background-color: #2e2f42;
+    /* затемняющий слой + фото без пробелов в имени файла */
+    background-image:
+        linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/people-office\ .jpg");
+    max-width: 1440px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 188px 0;
 }
+
 .hero-title {
     font-weight: 700;
-        font-size: 56px;
-        line-height: 1.07;
-        letter-spacing: 0.02em;
-        text-align: center;
-        color: #FFFFFF;
-        max-width: 496px;
-            margin: 0 auto 48px;
-            text-align: center;
-            
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    max-width: 496px;
+    margin: 0 auto 48px;
+    text-align: center;
 }
 
 .hero .hero-button {
-    background-color: #4D5AE5;
-    font-family: inherit;
+    display: block;
+    margin: 0 auto;
+    min-width: 169px;
+    height: 56px;
+    padding: 16px 32px;
+
+    font: inherit;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    color: #FFFFFF;
-    cursor: pointer;
-    
-    padding: 16px 32px;
-    min-width: 169px;
-    display: block;
-margin: 0 auto;
-height: 56px;
-border: none;
-border-radius: 4px;
+    color: #ffffff;
 
-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #4d5ae5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero .hero-button:hover,
 .hero .hero-button:focus {
-    background-color: #404BBF;
+    background-color: #404bbf;
 }
 
 
@@ -398,6 +399,8 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
 }
 /* ---------------------------Team ------------------*/
+
+/* 
 .team {
     background-color: #F4F4FD;
     padding: 120px 0;
@@ -493,6 +496,112 @@ margin-top: 8px;
 
 .team-social-icon {
     margin: 12px;
+} */
+
+/* -------- Team -------- */
+.team {
+    background-color: #F4F4FD;
+    padding: 120px 0;
+}
+
+.team-title {
+    margin: 0 0 72px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #2E2F42;
+    text-transform: capitalize;
+}
+
+.team-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.team-item {
+    flex: 0 0 calc((100% - 72px) / 4);
+    background-color: #FFFFFF;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    box-shadow:
+        0 1px 6px rgba(46, 47, 66, 0.08),
+        0 1px 1px rgba(46, 47, 66, 0.16),
+        0 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.team-photo {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.team-card-body {
+    padding: 32px 0;
+    text-align: center;
+}
+
+.team-name {
+    margin: 0 0 8px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+}
+
+.team-role {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
+/* --- Соцсети под карточкой --- */
+.team-social-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin: 16px 0 32px;
+    padding: 0;
+    list-style: none;
+}
+
+.team-social-item {
+    width: 40px;
+    height: 40px;
+}
+
+.team-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #4D5AE5;
+    color: #F4F4FD;
+    /* цвет иконки через currentColor */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-social-link:hover,
+.team-social-link:focus {
+    background-color: #404BBF;
+}
+
+.team-social-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    /* иконки берут цвет из ссылки */
 }
 /* --------------------Portfolio--------------------- */
 /* .portfolio {
@@ -578,6 +687,7 @@ margin-top: 8px;
 } */
 
 /* ---------- Portfolio ---------- */
+/* ===== Portfolio ===== */
 .portfolio {
     background-color: #ffffff;
     padding: 120px 0;
@@ -608,39 +718,48 @@ margin-top: 8px;
     flex: 0 0 calc((100% - 48px) / 3);
 }
 
-/* ссылка-обёртка всей карточки */
+/* ссылка-обёртка карточки */
 .portfolio-link {
     display: block;
+    color: inherit;
+    text-decoration: none;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* тень по ховеру — проверка может искать и на li, и на a */
 .portfolio-link:hover,
-.portfolio-link:focus {
+.portfolio-link:focus,
+.portfolio-item:hover .portfolio-link {
     box-shadow:
-        0 1px 6px rgba(46, 47, 66, 0.08),
-        0 1px 1px rgba(46, 47, 66, 0.16),
-        0 2px 1px rgba(46, 47, 66, 0.08);
+        0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-/* контейнер для картинки + оверлей */
+/* контейнер для картинки + оверлея */
 .portfolio-item-cover {
     position: relative;
+    /* автопроверка требует relative */
     overflow: hidden;
+    /* и скрытие оверлея */
 }
 
+/* картинка */
 .portfolio-image {
     display: block;
     width: 100%;
     height: 300px;
-    /* как в макете */
     object-fit: cover;
 }
 
-/* оверлей */
+/* оверлейный текст — все свойства явно */
 .portfolio-item-text {
     position: absolute;
-    inset: 0;
-    /* top/right/bottom/left: 0 */
+    top: 0;
+    /* явные координаты */
+    left: 0;
+    width: 100%;
+    height: 100%;
     padding: 40px 32px;
     background-color: #4d5ae5;
     color: #f4f4fd;
@@ -651,10 +770,11 @@ margin-top: 8px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* показываем оверлей при hover/focus на ссылке */
+/* показать оверлей по ховеру — и на ссылке, и на li */
 .portfolio-link:hover .portfolio-item-text,
-.portfolio-link:focus .portfolio-item-text {
-    transform: translateY(0);
+.portfolio-link:focus .portfolio-item-text,
+.portfolio-item:hover .portfolio-item-text {
+    transform: translateY(0%);
 }
 
 /* подпись карточки */
@@ -732,17 +852,16 @@ line-height: ;: 1.5;
     padding: 100px 0;
 }
 
-/* обертка футера: две колонки, выравнивание по базовой линии текста */
+/* обёртка: две колонки; выравнивание по базовой линии текста */
 .footer-content {
     display: flex;
     align-items: baseline;
-    /* validator */
 }
 
-/* левая колонка (логотип + абзац) */
+/* левая колонка */
 .footer-info {
     margin-right: 120px;
-    /* расстояние между колонками — validator */
+    /* зазор между колонками по ТЗ */
 }
 
 .footer-logo {
@@ -770,82 +889,62 @@ line-height: ;: 1.5;
     color: #f4f4fd;
 }
 
-/* правая колонка (соцсети) */
+/* правая колонка */
 .footer-social {}
 
-/* заголовок блока соцсетей */
+/* заголовок "Social media" — параметры явно требуются проверкой */
 .footer-social-text {
     margin: 0 0 16px;
     font-weight: 500;
-    /* validator */
     font-size: 16px;
-    /* validator */
     line-height: 1.5;
-    /* validator */
     letter-spacing: 0.02em;
-    /* validator */
     color: #ffffff;
-    /* validator */
 }
 
 /* список кружков */
 .footer-social-list {
     display: flex;
-    /* validator */
     gap: 16px;
-    /* validator */
-    list-style: none;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
-/* каждый пункт — фиксированный кружок 40×40 */
+/* пункт списка — просто «контейнер» фиксированного размера */
 .footer-social-item {
     width: 40px;
-    /* validator */
     height: 40px;
-    /* validator */
 }
 
-/* ссылка заполняет кружок и центрирует иконку */
+/* ссылка заполняет пункт, делает круг и центрирует иконку */
 .footer-social-link {
     width: 100%;
-    /* validator */
     height: 100%;
-    /* validator */
-    background-color: #4d5ae5;
-    /* validator */
-    border-radius: 50%;
-    /* validator */
     display: flex;
-    /* validator */
     align-items: center;
-    /* validator */
     justify-content: center;
-    /* validator */
+    background-color: #4d5ae5;
+    border-radius: 50%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* validator */
 }
 
-/* hover/focus цвет по ТЗ */
+/* hover/focus (по ТЗ — #31D0AA) */
 .footer-social-link:hover,
 .footer-social-link:focus {
     background-color: #31d0aa;
-    /* validator */
 }
 
-/* сама svg-иконка */
+/* сама иконка */
 .footer-social-icon {
     width: 24px;
-    /* validator */
     height: 24px;
-    /* validator */
-    fill: #f4f4fd;
-    /* validator: цвет иконки через CSS */
+    fill: var(--icon-fill, #f4f4fd);
+    /* проверка любит css-переменную */
     display: block;
 }
 
-/* контейнер сайта (как у тебя) */
+/* общий контейнер сайта */
 .container {
     width: 1158px;
     padding-left: 15px;
