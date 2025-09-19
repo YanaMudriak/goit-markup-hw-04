@@ -291,7 +291,7 @@ a {
 }
 
 .team-role {
-    margin: 0;
+    margin-bottom: 8px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -303,7 +303,6 @@ a {
     justify-content: center;
     align-items: center;
     gap: 24px;
-    margin: 16px 0 32px;
     padding: 0;
     list-style: none;
 }
